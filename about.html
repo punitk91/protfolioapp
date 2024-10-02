@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+
+<!-- Embedded CSS -->
+<style>
+    /* About Section */
+    section {
+        padding: 3rem;
+        background-color: #f0f0f0;
+        color: #333;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 3rem;
+    }
+
+    h1, h2 {
+        color: #007991;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    p, ul {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 0.8rem;
+        position: relative;
+    }
+
+    ul li::before {
+        content: "\f00c"; /* Font Awesome check mark */
+        font-family: FontAwesome;
+        color: #007991;
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Key Highlights */
+    .highlights, .experience {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Styling the education and experience section */
+    .experience ul, .education {
+        margin-bottom: 20px;
+        padding: 0 2rem;
+    }
+
+    .experience strong, .education strong {
+        color: #007991;
+    }
+
+    .experience ul li, .education {
+        border-bottom: 1px solid #d1d1d1;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .experience ul li:last-child, .education:last-child {
+        border-bottom: none;
+    }
+
+    /* Button styling for future enhancements */
+    .btn {
+        padding: 10px 20px;
+        background-color: #007991;
+        color: #ffffff;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #ffffff;
+        color: #007991;
+        box-shadow: 0 0 15px #007991;
+    }
+</style>
+
+<!-- About Section -->
+<section>
+    <h1>About Punit Gautam</h1>
+    <p>
+        I am an experienced backend developer with over 6 years of expertise in Python, Django, Flask, FastAPI, and microservices architecture.
+        Currently working as a Staff Software Engineer at Candata.ai, I specialize in building scalable backend systems, integrating AWS services, 
+        and developing high-performance solutions.
+    </p>
+
+    <h2>Key Highlights:</h2>
+    <div class="highlights">
+        <ul>
+            <li>Currently working at: <strong>Candata.ai</strong> as Staff Software Engineer</li>
+            <li>Total Experience: <strong>6+ years</strong></li>
+            <li>Cloud Technologies: <strong>AWS (EC2, S3, Fargate)</strong></li>
+            <li>Programming Languages: <strong>Python, SQL, GraphQL</strong></li>
+            <li>Databases: <strong>PostgreSQL, MySQL</strong></li>
+        </ul>
+    </div>
+
+    <h2>Education:</h2>
+    <div class="education">
+        <p><strong>Master of Computer Applications (MCA)</strong> from Bangalore University, 2016</p>
+    </div>
+
+    <h2>Professional Experience:</h2>
+    <div class="experience">
+        <ul>
+            <li><strong>Candata.ai (Feb 2024 - Present)</strong>: Architected and developed the backend system for an AI engine to score candidates based on various factors, such as skills, education, and location. Optimized system to handle 20K requests per minute and implemented auto-scaling with AWS.</li>
+            <li><strong>Mirafra Technologies (Sep 2021 – Feb 2024)</strong>: Engineered scalable systems and launched projects like TCRB, handling 2K requests per second using FastAPI and GraphQL.</li>
+            <li><strong>Walmart Labs (June 2019 – July 2021)</strong>: Developed Flask-based microservices and backend services with 99.99% uptime, handling 20K requests per minute.</li>
+            <li><strong>Iam Here Software Labs (June 2017 – June 2019)</strong>: Created custom reporting systems and enhanced communication efficiency through automated email systems.</li>
+        </ul>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punit Gautam - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #232526, #414345); /* Dynamic gradient background */
+            background-size: 200% 200%;
+            animation: gradientBG 10s ease infinite;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        main {
+            padding: 2rem;
+            margin-top: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #007991, #78ffd6);
+            padding: 2rem;
+        }
+
+        .typed-text {
+            color: #fddb3a;
+        }
+
+        .cursor.typing {
+            border-right: 2px solid #fddb3a;
+            animation: blinkCursor 0.75s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from { border-color: transparent; }
+            to { border-color: #fddb3a; }
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #fddb3a;
+            color: #333;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: #007991;
+            box-shadow: 0 0 15px #fddb3a;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .projects-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .project {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+
+        .project p {
+            color: #d1d1d1;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: #fddb3a;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #fddb3a;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 3rem;
+            background-color: #f0f0f0;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .about-section h1, .about-section h2 {
+            color: #007991;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .about-section p, .about-section ul {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            padding: 0 2rem;
+        }
+
+        .about-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-section ul li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .about-section ul li::before {
+            content: "\f00c"; /* Font Awesome check mark */
+            font-family: FontAwesome;
+            color: #007991;
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 2rem;
+            color: #ffffff;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #fddb3a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- Hero Section with Typing Effect -->
+        <section class="hero">
+            <h1>Hi, I'm <span class="typed-text"></span><span class="cursor typing"></span></h1>
+            <p>Aspiring <span class="typed-text"></span> | Flask, Python, AWS</p>
+            <p><a href="/resume" class="btn">Download my Resume</a></p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h1>About Punit Gautam</h1>
+            <p>
+                I am an experienced backend developer with over 6 years of expertise in Python, Django, Flask, FastAPI, and microservices architecture.
+                Currently working as a Staff Software Engineer at Candata.ai, I specialize in building scalable backend systems, integrating AWS services, 
+                and developing high-performance solutions.
+            </p>
+
+            <h2>Key Highlights:</h2>
+            <ul>
+                <li>Currently working at: <strong>Candata.ai</strong> as Staff Software Engineer</li>
+                <li>Total Experience: <strong>6+ years</strong></li>
+                <li>Cloud Technologies: <strong>AWS (EC2, S3, Fargate)</strong></li>
+                <li>Programming Languages: <strong>Python, SQL, GraphQL</strong></li>
+                <li>Databases: <strong>PostgreSQL, MySQL</strong></li>
+            </ul>
+
+            <h2>Education:</h2>
+            <p><strong>Master of Computer Applications (MCA)</strong> from Bangalore University, 2016</p>
+
+            <h2>Professional Experience:</h2>
+            <ul>
+                <li><strong>Candata.ai (Feb 2024 - Present)</strong>: Architected and developed the backend system for an AI engine to score candidates based on various factors, such as skills, education, and location. Optimized system to handle 20K requests per minute and implemented auto-scaling with AWS.</li>
+                <li><strong>Mirafra Technologies (Sep 2021 – Feb 2024)</strong>: Engineered scalable systems and launched projects like TCRB, handling 2K requests per second using FastAPI and GraphQL.</li>
+                <li><strong>Walmart Labs (June 2019 – July 2021)</strong>: Developed Flask-based microservices and backend services with 99.99% uptime, handling 20K requests per minute.</li>
+                <li><strong>Iam Here Software Labs (June 2017 – June 2019)</strong>: Created custom reporting systems and enhanced communication efficiency through automated email systems.</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>AI Candidate Scoring Engine</h3>
+                <p>Architected and developed the backend system for an AI engine to score candidates based on various metrics.</p>
+                <a href="https://github.com/your-ai-engine" class="project-link">GitHub Repo</a>
+            </div>
+            <div class="project">
+                <h3>E-commerce Backend</h3>
+                <p>Designed a scalable backend service using Flask to handle 20K requests per minute for Walmart Labs.</p>
+                <a href="https://github.com/your-ecommerce-backend" class="project-link">GitHub Repo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Connect with me on <a href="https://linkedin.com/in/punit-gautam-8529b48" target="_blank">LinkedIn</a> or check out my <a href="https://github.com/your-github" target="_blank">GitHub</a>.</p>
+    </footer>
+
+    <!-- Embedded JavaScript for Typing Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedTextSpan = document.querySelector('.typed-text');
+            const cursorSpan = document.querySelector('.cursor');
+            
+            const textArray = ['Backend Developer', 'Python Enthusiast', 'Flask & FastAPI Expert'];
+            const typingDelay = 200;
+            const erasingDelay = 100;
+            const newTextDelay = 2000; // Delay between current and next text
+            let textArrayIndex = 0;
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove('typing');
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+            
+            function erase() {
+                if (charIndex > 0) {
+                    if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove('typing');
+                    textArrayIndex++;
+                    if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+                    setTimeout(type, typingDelay + 1100);
+                }
+            }
+            
+            if(textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    </script>
+
+</body>
+</html>
